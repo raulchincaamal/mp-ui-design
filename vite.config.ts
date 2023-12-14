@@ -1,4 +1,4 @@
-import { resolve } from 'node:path'
+import path from 'node:path'
 
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
@@ -18,18 +18,24 @@ export default defineConfig((configEnv) => ({
       linters: [new EsLinter({ configEnv })],
     }),
     dts({
-      include: ['src/component/'],
+      include: ['src/components/'],
     }),
   ],
   build: {
     lib: {
-      entry: resolve("./src/components/index.ts"),
-      name: '@mp-ui-design',
+      entry: path.join('src', 'components/index.ts'),
+      name: 'MP-UI-Library',
       formats: ['es', 'umd'],
-      fileName: (format) => `@mp-ui-design.${format}.js`,
+      fileName: (format) => `mp-ui-design.${format}.js`,
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
     },
   },
 }))
