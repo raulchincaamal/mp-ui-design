@@ -41,7 +41,7 @@ export const Button = ({
       onClick={!isDisabled ? onClick : undefined}
       disabled={isDisabled}
     >
-      {children}
+      <span>{children}</span>
     </button>
   )
 }
