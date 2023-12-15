@@ -10,6 +10,8 @@ const App = () => {
       <Button type="primary">Primary</Button>
       <Button type="secondary">Secondary</Button>
       <Button type="text">Text</Button>
+      <Button type="danger">Danger</Button>
+      <Button isDisabled>Disabled</Button>
     </div>
   )
 }
