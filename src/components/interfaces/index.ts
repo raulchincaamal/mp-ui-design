@@ -1,7 +1,7 @@
-import React from "react"
+import React, { MouseEventHandler } from "react"
 
 export type Size = "sm" | "md" | "lg" | "xl"
-export type Type = "primary" | "secondary" | "text" | "default"
+export type Type = "primary" | "secondary" | "text" | "default" | "danger"
 
 export interface IColorVariants {
   bgColor?: string
@@ -12,4 +12,6 @@ export interface IButton {
   children: React.ReactNode
   type?: Type
   size?: Size
+  isDisabled?: boolean
+  onClick?: MouseEventHandler<HTMLButtonElement>
 }
