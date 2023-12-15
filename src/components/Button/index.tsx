@@ -1,4 +1,4 @@
-import { IButton, IColorVariants, Type } from './interfaces'
+import { IButton, IColorVariants, Type } from './../interfaces'
 
 const colorVariants: Record<Type, IColorVariants> = {
   default: {
