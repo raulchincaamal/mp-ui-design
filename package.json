@@ -57,8 +57,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/raulchincaamal/mp-ui-design"
-  },
-  "main": "./dist/mp-ui-design.umd.js",
-  "module": "./dist/mp-ui-design.es.js",
-  "types": "./dist/index.d.ts"
+  }
 }
