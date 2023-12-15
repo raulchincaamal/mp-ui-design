@@ -22,14 +22,13 @@ const colorVariants: Record<Type, IColorVariants> = {
 
 export const Button = ({ children, type = 'default' }: IButton) => {
   const { bgColor, color } = colorVariants[type]
+  const styleTextColor = `text-center ${color} firs font-normal font-['Avenir LT Pro'] sm:text-sm md:text-sm leading-snug lg:text-base xl:text-base sm:leading-snug md:leading-snug lg:leading-normal xl:leading-normal`
 
   return (
-    <button className={`${bgColor} border px-[15px] rounded shadow-none justify-center items-center gap-2 inline-flex sm:w-[109px] sm:h-6 md:w-[109px] md:h-8 md:py-1 md:rounded-md lg:w-[120px] lg:h-10 lg:py-[7px] lg:rounded-lg xl:w-[120px] xl:h-12 xl:py-[11px] xl:rounded-lg`}>
-      <div
-        className={`text-center ${color} font-normal font-['Avenir LT Pro'] sm:text-sm md:text-sm leading-snug lg:text-base xl:text-base sm:leading-snug md:leading-snug lg:leading-normal xl:leading-normal`}
-      >
-        {children}
-      </div>
+    <button
+      className={`${bgColor} ${styleTextColor} disabled:border-zinc-300 disabled:bg-neutral-100 disabled:text-stone-300 border px-[15px] rounded shadow-none justify-center items-center gap-2 inline-flex sm:w-[109px] sm:h-6 md:w-[109px] md:h-8 md:py-1 md:rounded-md lg:w-[120px] lg:h-10 lg:py-[7px] lg:rounded-lg xl:w-[120px] xl:h-12 xl:py-[11px] xl:rounded-lg`}
+    >
+      {children}
     </button>
   )
 }
