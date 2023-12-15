@@ -24,7 +24,7 @@ export default defineConfig((configEnv) => ({
   build: {
     lib: {
       entry: path.join('src', 'components/index.ts'),
-      name: 'MP-UI-Library',
+      name: 'MP-UI-Design',
       formats: ['es', 'umd'],
       fileName: (format) => `mp-ui-design.${format}.js`,
     },
